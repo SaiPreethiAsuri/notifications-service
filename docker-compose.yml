@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16
+    container_name: notification-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: notifications
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  notification-service:
+    build: .
+    container_name: notification-service
+    environment:
+      SMTP_USER: "2024tm93025@wilp.bits-pilani.ac.in"
+      SMTP_PASSWORD: "Student#123"
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: notifications
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+    depends_on:
+      - db
+    ports:
+      - "5002:5002"
+
+volumes:
+  db_data:
