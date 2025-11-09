@@ -11,7 +11,7 @@ import datetime
 app = Flask(__name__)
 
 # Config
-CUSTOMER_SERVICE_URL = "http://customer-service:5001/customers"
+CUSTOMER_SERVICE_URL = "http://customer-service:8000/customers"
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 SMTP_USER = os.getenv("SMTP_USER")

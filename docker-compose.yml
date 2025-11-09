@@ -18,7 +18,7 @@ services:
     container_name: notification-service
     environment:
       SMTP_USER: "2024tm93025@wilp.bits-pilani.ac.in"
-      SMTP_PASSWORD: "Student#123"
+      SMTP_PASSWORD: "agiwtpmpsrcexqgy"
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: notifications
