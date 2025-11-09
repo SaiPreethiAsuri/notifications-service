@@ -28,6 +28,7 @@ services:
       - db
     ports:
       - "5002:5002"
+    entrypoint: ["./wait-for-db.sh", "db", "python", "app.py"]
 
 volumes:
   db_data:
